@@ -1,6 +1,6 @@
-## 🔗 Training Program
+﻿## ًں”— Training Program
 
-This project was completed as part of the **SDA-AIE-113 — Software Engineering Practices for AI Systems** training program at **SDAIA Academy**, under the supervision of **Abdullah Khalid AlShahrani**.
+This project was completed as part of the **SDA-AIE-113 â€” Software Engineering Practices for AI Systems** training program at **SDAIA Academy**, under the supervision of **Abdullah Khalid AlShahrani**.
 
 The portfolio demonstrates the practical application of software engineering practices for AI systems through:
 
@@ -79,45 +79,45 @@ The current implementation uses a deterministic rule-based model as a baseline.
 
 wafi-helpdesk/
 
-├── src/
+â”œâ”€â”€ src/
 
-│   ├── adapters/
+â”‚   â”œâ”€â”€ adapters/
 
-│   │   └── model.py
+â”‚   â”‚   â””â”€â”€ model.py
 
-│   ├── api/
+â”‚   â”œâ”€â”€ api/
 
-│   │   └── main.py
+â”‚   â”‚   â””â”€â”€ main.py
 
-│   ├── domain/
+â”‚   â”œâ”€â”€ domain/
 
-│   │   └── models.py
+â”‚   â”‚   â””â”€â”€ models.py
 
-│   └── service/
+â”‚   â””â”€â”€ service/
 
-│       └── ticket\_service.py
+â”‚       â””â”€â”€ ticket\_service.py
 
-├── tests/
+â”œâ”€â”€ tests/
 
-│   ├── unit/
+â”‚   â”œâ”€â”€ unit/
 
-│   ├── integration/
+â”‚   â”œâ”€â”€ integration/
 
-│   ├── behavioural/
+â”‚   â”œâ”€â”€ behavioural/
 
-│   └── fixtures/
+â”‚   â””â”€â”€ fixtures/
 
-├── Dockerfile
+â”œâ”€â”€ Dockerfile
 
-├── docker-compose.yml
+â”œâ”€â”€ docker-compose.yml
 
-├── pyproject.toml
+â”œâ”€â”€ pyproject.toml
 
-├── pytest.ini
+â”œâ”€â”€ pytest.ini
 
-├── requirements.txt
+â”œâ”€â”€ requirements.txt
 
-└── README.md
+â””â”€â”€ README.md
 
 API Endpoints
 
@@ -279,17 +279,18 @@ Development
 
 The project is structured into separate layers:
 
-\- api — HTTP endpoints
+\- api â€” HTTP endpoints
 
-\- service — application/service logic
+\- service â€” application/service logic
 
-\- domain — request and response models
+\- domain â€” request and response models
 
-\- adapters — model implementation
+\- adapters â€” model implementation
 
 This separation makes the model implementation replaceable without changing the API layer.
 
 License
 
 This project was developed as part of a software engineering project.
+
 
