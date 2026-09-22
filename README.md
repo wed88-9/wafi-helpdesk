@@ -17,7 +17,9 @@ The portfolio demonstrates the practical application of software engineering pra
 
 
 
-\# Wafi Helpdesk Ticket Triage
+---
+
+# Wafi Helpdesk Ticket Triage
 
 
 
@@ -292,5 +294,6 @@ This separation makes the model implementation replaceable without changing the 
 License
 
 This project was developed as part of a software engineering project.
+
 
 
