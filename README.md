@@ -270,6 +270,23 @@ The project is structured into separate layers:
 
 This separation makes the model implementation replaceable without changing the API layer.
 
+## Training Program
+
+This project was completed as part of the **SDA-AIE-113 — Software Engineering Practices for AI Systems** training program at **SDAIA Academy**, under the supervision of **Abdullah Khalid AlShahrani**.
+
+The portfolio demonstrates the practical application of software engineering practices for AI systems — building a production-style AI/ML service through:
+
+- Clean architecture
+- A well-defined API contract
+- Containerization
+- A layered automated testing suite
+- CI/CD with branch protection
+- Safe configuration, secrets, and logging management
+
+### Official SDAIA Academy GitHub
+
+https://github.com/SDAIAAcademy
+
 License
 
 This project was developed as part of a software engineering project.
