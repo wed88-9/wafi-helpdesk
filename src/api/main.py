@@ -1,4 +1,4 @@
-import logging
+﻿import logging
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 from uuid import uuid4
@@ -11,7 +11,6 @@ from src.api.routes.batch import router as batch_router
 from src.domain.models import TicketRequest
 from src.logging_config import configure_logging
 from src.service.ticket_service import TicketService
-
 
 configure_logging()
 logger = logging.getLogger(__name__)
@@ -93,3 +92,4 @@ async def handle_error(
             "error": "Internal server error",
         },
     )
+
