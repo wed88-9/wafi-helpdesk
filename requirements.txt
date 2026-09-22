@@ -3,3 +3,7 @@ uvicorn[standard]>=0.34.0
 pydantic==2.10.5
 pytest
 httpx
+
+ruff
+mypy
+import-linter

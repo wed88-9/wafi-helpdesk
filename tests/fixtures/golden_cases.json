@@ -1,0 +1,22 @@
+[
+  {
+    "text": "All employees cannot access the system",
+    "team": "IT Support",
+    "urgency": "urgent"
+  },
+  {
+    "text": "I forgot my password",
+    "team": "IT Support",
+    "urgency": "low"
+  },
+  {
+    "text": "I cannot login to the system",
+    "team": "IT Support",
+    "urgency": "medium"
+  },
+  {
+    "text": "My monitor is not working",
+    "team": "IT Support",
+    "urgency": "medium"
+  }
+]

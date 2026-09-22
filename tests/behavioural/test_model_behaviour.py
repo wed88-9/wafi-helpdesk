@@ -1,4 +1,12 @@
+import json
+from pathlib import Path
+
 from src.adapters.model import WafiRuleModel
+
+
+def load_golden_cases():
+    path = Path("tests/fixtures/golden_cases.json")
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def test_invariance_case_and_whitespace():
@@ -23,15 +31,8 @@ def test_directional_full_outage_must_be_urgent():
 def test_golden_reference_cases():
     model = WafiRuleModel()
 
-    golden_cases = [
-        ("All employees cannot access the system", "IT Support", "urgent"),
-        ("I forgot my password", "IT Support", "low"),
-        ("I cannot login to the system", "IT Support", "medium"),
-        ("My monitor is not working", "IT Support", "medium"),
-    ]
+    for case in load_golden_cases():
+        team, urgency = model.predict(case["text"])
 
-    for text, expected_team, expected_urgency in golden_cases:
-        team, urgency = model.predict(text)
-
-        assert team == expected_team
-        assert urgency == expected_urgency
+        assert team == case["team"]
+        assert urgency == case["urgency"]
