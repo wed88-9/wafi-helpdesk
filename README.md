@@ -16,7 +16,21 @@ The portfolio demonstrates the practical application of software engineering pra
 
 
 
+<table>
+<tr>
+<td>
 
+### 🏛️ Official SDAIA Academy GitHub
+
+Explore more projects and programs from SDAIA Academy.
+
+[SDAIA Academy](https://github.com/SDAIAAcademy)
+
+</td>
+</tr>
+</table>
+
+<hr>
 ---
 
 # Wafi Helpdesk Ticket Triage
