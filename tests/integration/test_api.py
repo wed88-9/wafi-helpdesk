@@ -59,7 +59,7 @@ def test_predict_rejects_unknown_fields():
 def test_batch_predict():
     with TestClient(app) as client:
         response = client.post(
-            "/v1/batch-predict",
+            "/v1/predict-batch",
             json=[
                 {"text": "All employees cannot access the system"},
                 {"text": "Forgot password"},

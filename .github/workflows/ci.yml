@@ -3,10 +3,10 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 permissions:
   contents: read
@@ -31,7 +31,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run tests
-        run: pytest
+        run: pytest --cov=src --cov-branch --cov-fail-under=80
 
       - name: Run Ruff
         run: ruff check src tests
@@ -57,11 +57,21 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Build Docker image
+        run: docker build -t wafi-helpdesk-smoke .
+
+      - name: Smoke test image
+        run: |
+          docker run -d --name wafi-smoke -p 8000:8000 wafi-helpdesk-smoke
+          sleep 5
+          curl --fail http://localhost:8000/ready
+          docker rm -f wafi-smoke
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:${{ github.sha }}
+              ghcr.io/${{ github.repository }}:latest
+           ghcr.io/${{ github.repository }}:${{ github.sha }}
