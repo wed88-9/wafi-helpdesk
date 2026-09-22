@@ -7,9 +7,11 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
 from src.adapters.model import WafiRuleModel
+from src.api.routes.batch import router as batch_router
 from src.domain.models import TicketRequest
 from src.logging_config import configure_logging
 from src.service.ticket_service import TicketService
+
 
 configure_logging()
 logger = logging.getLogger(__name__)
@@ -28,6 +30,8 @@ app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
 )
+
+app.include_router(batch_router)
 
 
 @app.get("/health")

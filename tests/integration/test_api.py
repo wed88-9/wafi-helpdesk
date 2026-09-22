@@ -56,3 +56,26 @@ def test_predict_rejects_unknown_fields():
         )
 
     assert response.status_code == 422
+def test_batch_predict():
+    with TestClient(app) as client:
+        response = client.post(
+            "/v1/batch-predict",
+            json=[
+                {"text": "All employees cannot access the system"},
+                {"text": "Forgot password"},
+            ],
+        )
+
+    assert response.status_code == 200
+
+    body = response.json()
+
+    assert body["count"] == 2
+    assert body["data"][0] == {
+        "team": "IT Support",
+        "urgency": "urgent",
+    }
+    assert body["data"][1] == {
+        "team": "IT Support",
+        "urgency": "low",
+    }
