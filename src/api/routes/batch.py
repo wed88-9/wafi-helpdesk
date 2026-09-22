@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Request
+﻿from fastapi import APIRouter, Request
 
 from src.domain.models import TicketRequest
 
@@ -9,7 +9,7 @@ router = APIRouter(prefix="/v1", tags=["batch"])
 def predict_batch(
     tickets: list[TicketRequest],
     request: Request,
-) -> dict:
+) -> dict[str, object]:
     service = request.app.state.service
 
     results = []
