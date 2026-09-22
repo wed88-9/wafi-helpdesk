@@ -96,121 +96,76 @@ Behavioural tests verify important model behaviours, including:
 
 
 
-\## Current Test Result
-
-
+## Current Test Result
 
 The complete local test suite currently contains:
 
-
-
 ```text
-
-12 tests passed
+13 tests passed
+Branch coverage: 91%
 
 Breakdown:
-
 Unit tests:          4 passed
-
-Integration tests:   5 passed
-
+Integration tests:   6 passed
 Behavioural tests:   3 passed
-
-\--------------------------------
-
-Total:              12 passed
-
+--------------------------------
+Total:              13 passed
 Static Analysis
-
 Ruff
-
 Command:
-
 docker compose run --rm wafi-api ruff check src tests
-
 Result:
-
 All checks passed!
-
 Mypy
-
 Command:
-
 docker compose run --rm wafi-api mypy src
-
 Result:
-
 Success: no issues found in 9 source files
-
 Import Linter
-
 Command:
-
 docker compose run --rm wafi-api lint-imports
-
 Result:
-
 Contracts: 1 kept, 0 broken
-
 Architecture contract:
-
 Domain must not depend on API
-
 Docker Validation
-
 The application is packaged using a multi-stage Docker build.
-
+Measured Docker image size:
+395 MB
+Build time:
+1.25 seconds
 The runtime container:
-
-\- Uses a non-root user
-
-\- Includes only the required runtime dependencies
-
-\- Exposes port 8000
-
-\- Includes a readiness health check
-
+- Uses a non-root user
+- Includes only the required runtime dependencies
+- Exposes port 8000
+- Includes a readiness health check
 Redis is also included in Docker Compose and is configured with a health check.
-
+Test Performance
+Measured complete test and coverage execution time:
+3.21 seconds
+This run completed with:
+13 tests passed
+Branch coverage: 91%
 API Validation
-
 Example valid request:
-
 {
-
-&#x20; "text": "All employees cannot access the system"
-
+  "text": "All employees cannot access the system"
 }
-
 Expected classification:
-
 {
-
-&#x20; "team": "IT Support",
-
-&#x20; "urgency": "urgent"
-
+  "team": "IT Support",
+  "urgency": "urgent"
 }
-
 Invalid requests are rejected using FastAPI/Pydantic validation.
-
 Performance Notes
-
 The current implementation is a deterministic rule-based baseline.
-
-No formal latency or throughput benchmark has been recorded yet.
-
-Future performance measurements can include:
-
-\- Average request latency
-
-\- Requests per second
-
-\- Container startup time
-
-\- Memory usage
-
-\- CPU usage
+Measured results from the local environment:
+Metric	Result
+Docker image size	395 MB
+Docker build time	1.25 seconds
+Test + coverage time	3.21 seconds
+Branch coverage	91%
+Tests passed
 
 Summary
 
